@@ -1,0 +1,168 @@
+/* ==========================================
+   DIGIVYB — Additional Utility Styles
+   Tech Startup · Dark Theme Extras
+   ========================================== */
+
+/* Blog gradient placeholders */
+.blog-gradient-1 {
+  background: linear-gradient(135deg, #69C8C7 0%, #3D8F97 100%);
+}
+.blog-gradient-2 {
+  background: linear-gradient(135deg, #0F2027 0%, #69C8C7 100%);
+}
+.blog-gradient-3 {
+  background: linear-gradient(135deg, #1A0533 0%, #3D8F97 100%);
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px;
+  background: rgba(105,200,199,0.06);
+  border: 1px solid rgba(105,200,199,0.2);
+  border-radius: 12px;
+  color: #69C8C7;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+.form-success.show {
+  display: block;
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar active link on scroll */
+.header-nav a.active {
+  color: #69C8C7;
+}
+
+/* Hero text animation */
+.hero-title-word {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-title-word-inner {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: wordReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes wordReveal {
+  to { transform: translateY(0); }
+}
+
+/* Clients logo bar */
+.clients-section {
+  background: #0A0D17;
+  padding: 56px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.clients-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #71717A;
+  margin-bottom: 32px;
+}
+
+.clients-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.client-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.12);
+  letter-spacing: -0.02em;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.client-logo:hover {
+  color: rgba(255,255,255,0.35);
+}
+
+/* Glow animation utility */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(105,200,199,0.15); }
+  50% { box-shadow: 0 0 40px rgba(105,200,199,0.3); }
+}
+
+.glow-animate {
+  animation: glowPulse 3s ease infinite;
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+  border-radius: 12px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #69C8C7, #3D8F97);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Terminal typing animation delays */
+.terminal-line:nth-child(1) { animation: fadeInLine 0.3s ease 0.5s both; }
+.terminal-line:nth-child(2) { animation: fadeInLine 0.3s ease 0.9s both; }
+.terminal-line:nth-child(3) { animation: fadeInLine 0.3s ease 1.3s both; }
+.terminal-line:nth-child(4) { animation: fadeInLine 0.3s ease 1.7s both; }
+.terminal-line:nth-child(5) { animation: fadeInLine 0.3s ease 2.1s both; }
+.terminal-line:nth-child(6) { animation: fadeInLine 0.3s ease 2.5s both; }
+.terminal-line:nth-child(7) { animation: fadeInLine 0.3s ease 2.9s both; }
+.terminal-line:nth-child(8) { animation: fadeInLine 0.3s ease 3.3s both; }
+.terminal-line:nth-child(9) { animation: fadeInLine 0.3s ease 3.7s both; }
+.terminal-line:nth-child(10) { animation: fadeInLine 0.3s ease 4.1s both; }
+
+@keyframes fadeInLine {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero terminal card floating animation */
+.hero-terminal-wrap {
+  animation: floatTerminal 6s ease-in-out infinite;
+}
+
+@keyframes floatTerminal {
+  0%, 100% { transform: translateY(-50%) translateY(0px); }
+  50% { transform: translateY(-50%) translateY(-12px); }
+}
+
+/* Code syntax highlight classes */
+.code-keyword { color: #C792EA; }
+.code-string { color: #C3E88D; }
+.code-comment { color: #546E7A; font-style: italic; }
+.code-function { color: #82AAFF; }
+.code-number { color: #F78C6C; }
+
+/* Dot grid pattern helper */
+.dot-grid-bg {
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
