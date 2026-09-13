@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Digivyb is the deployment platform with a pulse. We distill your logs, metrics, and pipelines into one living signal — the Vybe Score — so every engineering team always knows exactly how healthy their systems really are.">
-  <meta name="keywords" content="Vybe Score, deployment platform, CI/CD, edge network, cloud infrastructure, observability, DevOps, Digivyb">
+  <meta name="description" content="Digivyb is a web and app development studio that designs, builds, and ships fast, beautiful websites and apps for ambitious businesses — with clean code, sharp design, and zero guesswork.">
+  <meta name="keywords" content="web development, app development, website design, mobile app development, UI/UX design, e-commerce development, digital agency, Digivyb">
   <meta name="author" content="Digivyb">
-  <meta property="og:title" content="Digivyb — Deploy Code. Feel The Vybe.">
-  <meta property="og:description" content="One living score for the health of everything you ship. Deploy in seconds, watch your Vybe Score climb, sleep through the incident that never happened.">
+  <meta property="og:title" content="Digivyb — Websites & Apps, Built Right.">
+  <meta property="og:description" content="A web and app development studio that designs, builds, and ships digital products businesses actually love using.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/digivyb-logo.png">
-  <title>Digivyb — Deploy Code. Feel The Vybe.</title>
+  <title>Digivyb — Websites & Apps, Built Right.</title>
   <link rel="icon" type="image/png" href="images/digivyb-icon.png">
   <link rel="apple-touch-icon" href="images/digivyb-icon.png">
   <!-- Stylesheets -->
@@ -21,8 +21,9 @@
   <!-- Theme: apply before first paint to prevent flash -->
   <script>
     (function() {
-      var t = localStorage.getItem('dv-theme') || 'light';
-      document.documentElement.setAttribute('data-theme', t);
+      // Theme switcher is hidden for now — force light mode regardless of
+      // any theme saved earlier, since there's no UI to correct it back.
+      document.documentElement.setAttribute('data-theme', 'light');
     })();
   </script>
 </head>
@@ -64,14 +65,14 @@
         </a>
 
         <nav class="header-nav">
-          <a href="#services">Features</a>
-          <a href="#portfolio">Solutions</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div class="header-cta">
-          <a href="#contact" class="btn-outline">Get My Vybe</a>
+          <a href="#contact" class="btn-outline">Get A Free Quote</a>
           <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle light/dark mode">
             <i class="fa-solid fa-moon" id="theme-icon"></i>
           </button>
@@ -94,8 +95,8 @@
       <button class="menu-close-btn" id="menu-close-btn" aria-label="Close Menu">✕</button>
     </div>
     <nav class="menu-overlay-nav">
-      <a href="#services">Features <i class="fa-solid fa-arrow-right"></i></a>
-      <a href="#portfolio">Solutions <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#services">Services <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#portfolio">Portfolio <i class="fa-solid fa-arrow-right"></i></a>
       <a href="#pricing">Pricing <i class="fa-solid fa-arrow-right"></i></a>
       <a href="#contact">Contact <i class="fa-solid fa-arrow-right"></i></a>
     </nav>
@@ -112,7 +113,22 @@
   <!-- ====== HERO SECTION ====== -->
   <section id="hero">
     <div class="hero-bg">
-      <img src="images/hero-bg.png" alt="Digivyb Platform Background">
+      <video
+        class="hero-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="images/hero-bg.png"
+        aria-hidden="true">
+        <source src="videos/hero-bg.mp4" type="video/mp4">
+        <img src="images/hero-bg.png" alt="Digivyb Studio Background">
+      </video>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-3" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-bg-scrim" aria-hidden="true"></div>
       <div class="hero-bg-gradient"></div>
     </div>
 
@@ -120,42 +136,42 @@
       <div class="hero-content">
         <div class="hero-badge hero-animate" style="opacity:0;transform:translateY(20px);transition:all 0.7s ease;">
           <span class="hero-badge-dot"></span>
-          Public Beta — 12,400+ Builders Already Vybing
+          From Idea to Launch — 120+ Projects Delivered
         </div>
 
         <h1 class="hero-title hero-animate" style="opacity:0;transform:translateY(30px);transition:all 0.7s ease 0.12s;">
-          Deploy Code.
-          <span class="accent-line">Feel The Vybe.</span>
-          <span class="highlight">Ship Without Fear.</span>
+          Design That Converts.
+          <span class="accent-line">Code That Scales.</span>
+          <span class="highlight">Support That Lasts.</span>
         </h1>
 
         <p class="hero-description hero-animate" style="opacity:0;transform:translateY(20px);transition:all 0.7s ease 0.24s;">
-          Digivyb turns scattered logs, latency graphs, and pipeline noise into one living number — your Vybe Score. Push a commit, watch it climb, and know your stack is healthy before your users ever notice otherwise.
+          Digivyb is a web and app development studio that designs, builds, and ships digital products for ambitious businesses. From the first wireframe to launch day, we handle the design, the code, and everything in between — so you can focus on running your business.
         </p>
 
         <div class="hero-actions hero-animate" style="opacity:0;transform:translateY(20px);transition:all 0.7s ease 0.36s;">
           <a href="#contact" class="hero-btn-primary">
-            Get your Vybe Score
+            Get A Free Quote
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
         <div class="hero-stats hero-animate" style="opacity:0;transform:translateY(20px);transition:all 0.7s ease 0.48s;">
           <div class="hero-stat">
-            <div class="hero-stat-number"><span data-target="97" data-suffix="/100">0/100</span></div>
-            <div class="hero-stat-label">Average Vybe Score</div>
+            <div class="hero-stat-number"><span data-target="120" data-suffix="+">0+</span></div>
+            <div class="hero-stat-label">Projects Delivered</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-number"><span data-target="42" data-suffix="K+">0K+</span></div>
-            <div class="hero-stat-label">Deploys Shipped Weekly</div>
+            <div class="hero-stat-number"><span data-target="98" data-suffix="%">0%</span></div>
+            <div class="hero-stat-label">Client Retention Rate</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-number"><span data-target="9" data-suffix="s">&lt;9s</span></div>
-            <div class="hero-stat-label">Mean Time to Detect</div>
+            <div class="hero-stat-number"><span data-target="30" data-suffix="+">0+</span></div>
+            <div class="hero-stat-label">Industries Served</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-number"><span data-target="100" data-suffix="+">0+</span></div>
-            <div class="hero-stat-label">Edge Locations</div>
+            <div class="hero-stat-number"><span data-target="8" data-suffix="+">0+</span></div>
+            <div class="hero-stat-label">Years of Experience</div>
           </div>
         </div>
       </div>
@@ -168,18 +184,18 @@
           <span class="terminal-dot red"></span>
           <span class="terminal-dot yellow"></span>
           <span class="terminal-dot green"></span>
-          <span class="terminal-title">digivyb — vybe check</span>
+          <span class="terminal-title">digivyb — launch day</span>
         </div>
         <div class="terminal-body">
-          <div class="terminal-line"><span class="terminal-prompt">$</span> npx digivyb vybe --prod</div>
-          <div class="terminal-line output">✓ Reading pulse from 6 services...</div>
-          <div class="terminal-line output">✓ Cross-checking latency + error budget... <span class="terminal-green">clear</span></div>
-          <div class="terminal-line output">✓ Running test suite... <span class="terminal-green">47 passed</span></div>
-          <div class="terminal-line output">✓ Optimizing build... <span class="terminal-green">↓ 82%</span></div>
-          <div class="terminal-line output">✓ Deploying to 100+ edge nodes...</div>
-          <div class="terminal-line output">✓ Vybe Score recalculated: <span class="terminal-green">96 → 99</span></div>
-          <div class="terminal-line success">🎧 Status → In The Zone</div>
-          <div class="terminal-line output" style="margin-top:4px; color: #71717A; font-size:12px;">Deployed in 4.1s · 0 incidents · SOC2 ✓</div>
+          <div class="terminal-line"><span class="terminal-prompt">$</span> digivyb, is my new site ready?</div>
+          <div class="terminal-line output">✓ Optimizing every image and font...</div>
+          <div class="terminal-line output">✓ Testing on phones, tablets, and every browser... <span class="terminal-green">all clear</span></div>
+          <div class="terminal-line output">✓ Checking your SEO basics... <span class="terminal-green">98/100</span></div>
+          <div class="terminal-line output">✓ Making sure every button and form works... <span class="terminal-green">47 for 47</span></div>
+          <div class="terminal-line output">✓ Publishing to the web...</div>
+          <div class="terminal-line output">✓ Running one last full site check... <span class="terminal-green">passed</span></div>
+          <div class="terminal-line success">🎧 Status → Ready For The World</div>
+          <div class="terminal-line output" style="margin-top:4px; color: #71717A; font-size:12px;">Live in 4.1 seconds · 0 hiccups · fully responsive ✓</div>
           <div class="terminal-line" style="margin-top: 8px;"><span class="terminal-prompt">$</span> <span class="terminal-cursor"></span></div>
         </div>
       </div>
@@ -196,37 +212,37 @@
     <div class="marquee-track">
       <!-- Repeated twice for seamless loop -->
       <div class="marquee-item"><span class="marquee-dot"></span> React</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Next.js</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> React Native</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Flutter</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Vue.js</div>
       <div class="marquee-item"><span class="marquee-dot"></span> TypeScript</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Node.js</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Kubernetes</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Tailwind CSS</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Figma</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Shopify</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> WordPress</div>
       <div class="marquee-item"><span class="marquee-dot"></span> GraphQL</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> PostgreSQL</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Redis</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Terraform</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Docker</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Rust</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> WebAssembly</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Next.js</div>
       <!-- Duplicate -->
       <div class="marquee-item"><span class="marquee-dot"></span> React</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Next.js</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> React Native</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Flutter</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Vue.js</div>
       <div class="marquee-item"><span class="marquee-dot"></span> TypeScript</div>
       <div class="marquee-item"><span class="marquee-dot"></span> Node.js</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Kubernetes</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Tailwind CSS</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Figma</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> Shopify</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> WordPress</div>
       <div class="marquee-item"><span class="marquee-dot"></span> GraphQL</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> PostgreSQL</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Redis</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Terraform</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Docker</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Rust</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> WebAssembly</div>
-      <div class="marquee-item"><span class="marquee-dot"></span> Next.js</div>
     </div>
   </div>
 
   <!-- ====== CLIENTS STRIP ====== -->
   <div class="clients-section">
     <div class="container">
-      <p class="clients-label">Trusted by engineering teams at</p>
+      <p class="clients-label">Trusted by growing businesses at</p>
       <div class="clients-logos">
         <div class="client-logo">NovaTech</div>
         <div class="client-logo">AxisCloud</div>
@@ -244,55 +260,55 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrap reveal">
-          <img src="images/about.png" alt="Digivyb Platform Dashboard" class="about-image-main">
+          <img src="images/about.png" alt="Digivyb Project Dashboard" class="about-image-main">
           <div class="about-image-badge">
-            <div class="about-badge-icon">🎧</div>
+            <div class="about-badge-icon">🎨</div>
             <div class="about-badge-text">
-              <strong><span data-target="97" data-suffix="/100">97/100</span></strong>
-              <span>Live Vybe Score</span>
+              <strong><span data-target="45" data-suffix="+">45+</span></strong>
+              <span>Happy Clients</span>
             </div>
           </div>
         </div>
 
         <div class="about-content">
           <div class="reveal">
-            <span class="section-label">What Is a Vybe?</span>
-            <h2 class="section-title">The pulse your stack never had until now.</h2>
+            <span class="section-label">Why Digivyb?</span>
+            <h2 class="section-title">Design and code you can actually be proud of.</h2>
           </div>
 
           <p class="about-description reveal reveal-delay-1">
-            Every deploy, every dependency, every 2 a.m. alert used to live in a different dashboard. We built Digivyb to collapse all of it into one honest signal — the Vybe Score — a live read on latency, error budget, and deploy health that anyone on your team can understand at a glance, not just the on-call engineer.
+            Every pixel, every page load, every "does this actually work on mobile" matters to us as much as it matters to you. We built Digivyb around a simple idea: design that looks as good as it works, and code that's built to last — not just to launch.
           </p>
 
           <div class="about-stats reveal reveal-delay-2">
             <div class="about-stat">
-              <div class="about-stat-number" data-target="12" data-suffix="K+">12K+</div>
-              <div class="about-stat-label">Teams Tracking Their Vybe</div>
+              <div class="about-stat-number" data-target="120" data-suffix="+">120+</div>
+              <div class="about-stat-label">Projects Delivered</div>
             </div>
             <div class="about-stat">
-              <div class="about-stat-number" data-target="500" data-suffix="M+">500M+</div>
-              <div class="about-stat-label">Signals Scored Daily</div>
+              <div class="about-stat-number" data-target="45" data-suffix="+">45+</div>
+              <div class="about-stat-label">Businesses Served</div>
             </div>
             <div class="about-stat">
-              <div class="about-stat-number" data-target="96" data-suffix="">96</div>
-              <div class="about-stat-label">Median Vybe Score</div>
+              <div class="about-stat-number" data-target="15" data-suffix="+">15+</div>
+              <div class="about-stat-label">Team Experts</div>
             </div>
             <div class="about-stat">
-              <div class="about-stat-number" data-target="100" data-suffix="+">100+</div>
-              <div class="about-stat-label">Edge Locations</div>
+              <div class="about-stat-number" data-target="8" data-suffix="+">8+</div>
+              <div class="about-stat-label">Years Combined Experience</div>
             </div>
           </div>
 
           <div class="about-values reveal reveal-delay-3">
-            <div class="about-value">Zero-config deploys from any git provider, scored the instant they land</div>
-            <div class="about-value">SOC2 Type II certified, GDPR compliant, no exceptions</div>
-            <div class="about-value">Open-core — the Vybe Score engine, CLI, and SDKs are open source</div>
-            <div class="about-value">Built by a team that got tired of guessing if prod was okay</div>
+            <div class="about-value">Every project starts with a free consultation, no strings attached</div>
+            <div class="about-value">GDPR compliant, accessible by default, built to modern web standards</div>
+            <div class="about-value">Transparent, fixed-price quotes with no hidden fees, ever</div>
+            <div class="about-value">Built by a team that got tired of agencies hiding behind jargon</div>
           </div>
 
           <div class="reveal reveal-delay-4" style="margin-top: 36px;">
             <a href="#contact" class="btn-primary">
-              <span>Check Your Vybe Free</span>
+              <span>Get A Free Consultation</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -306,82 +322,82 @@
     <div class="container">
       <div class="services-header">
         <div>
-          <span class="section-label reveal">Platform Features</span>
-          <h2 class="section-title reveal reveal-delay-1">Six ways we keep<br>your Vybe honest.</h2>
+          <span class="section-label reveal">Our Services</span>
+          <h2 class="section-title reveal reveal-delay-1">Everything you need<br>to launch and grow.</h2>
         </div>
-        <p class="section-subtitle reveal reveal-delay-2" style="max-width: 340px;">No dashboard-hopping. No guessing games at 2 a.m. Just one score you can trust and the tools to keep it high.</p>
+        <p class="section-subtitle reveal reveal-delay-2" style="max-width: 340px;">From your first sketch to your millionth visitor — design and development done right.</p>
       </div>
 
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">⚡</div>
-          <span class="service-number">01</span>
-          <h3 class="service-name">Instant Deploy Pulse</h3>
-          <p class="service-desc">Push your code and watch your Vybe Score update in real time. Automatic builds, health checks, and instant rollback the moment a deploy drags your score down.</p>
-          <div class="service-tags">
-            <span class="service-tag">Git Push</span>
-            <span class="service-tag">Auto Rollback</span>
-            <span class="service-tag">Zero Downtime</span>
-          </div>
-        </div>
-
-        <div class="service-card reveal reveal-delay-1">
           <div class="service-icon">🌐</div>
-          <span class="service-number">02</span>
-          <h3 class="service-name">Global Edge Groove</h3>
-          <p class="service-desc">Your apps run at the edge — 100+ PoPs across 6 continents, each one feeding its own latency signal back into your Vybe Score. Slow regions get caught, not shrugged off.</p>
+          <span class="service-number">01</span>
+          <h3 class="service-name">Website Development</h3>
+          <p class="service-desc">Custom, responsive websites built on modern frameworks — fast, SEO-ready, and easy for your own team to update. From marketing sites to full web applications.</p>
           <div class="service-tags">
-            <span class="service-tag">100+ PoPs</span>
-            <span class="service-tag">CDN</span>
-            <span class="service-tag">Edge Functions</span>
-          </div>
-        </div>
-
-        <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">🎧</div>
-          <span class="service-number">03</span>
-          <h3 class="service-name">Vybe Score Engine</h3>
-          <p class="service-desc">Our scoring model weighs latency, error rate, deploy frequency, and rollback history into a single 0–100 number — and explains, in plain language, exactly what moved it.</p>
-          <div class="service-tags">
-            <span class="service-tag">Composite Score</span>
-            <span class="service-tag">Failure Prediction</span>
-            <span class="service-tag">Plain-English Alerts</span>
+            <span class="service-tag">Next.js</span>
+            <span class="service-tag">CMS Integration</span>
+            <span class="service-tag">SEO-Ready</span>
           </div>
         </div>
 
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">🔒</div>
-          <span class="service-number">04</span>
-          <h3 class="service-name">Lockstep Security</h3>
-          <p class="service-desc">SOC2 Type II, end-to-end encryption, role-based access, and a secrets vault that scans every deploy — a vulnerability quietly drags your Vybe Score down before it ever ships.</p>
+          <div class="service-icon">📱</div>
+          <span class="service-number">02</span>
+          <h3 class="service-name">App Development</h3>
+          <p class="service-desc">Native and cross-platform apps for iOS and Android that feel fast because they are. One codebase, two app stores, zero compromises on quality.</p>
           <div class="service-tags">
-            <span class="service-tag">SOC2</span>
-            <span class="service-tag">RBAC</span>
-            <span class="service-tag">Secret Vault</span>
+            <span class="service-tag">iOS &amp; Android</span>
+            <span class="service-tag">React Native</span>
+            <span class="service-tag">App Store Launch</span>
           </div>
         </div>
 
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">📡</div>
-          <span class="service-number">05</span>
-          <h3 class="service-name">Live Systems Radar</h3>
-          <p class="service-desc">Distributed tracing, structured logging, and anomaly alerts feed the same score your whole team already checks — so nobody has to learn a second dashboard to know something's off.</p>
+          <div class="service-icon">🎨</div>
+          <span class="service-number">03</span>
+          <h3 class="service-name">UI/UX Design</h3>
+          <p class="service-desc">Wireframes, prototypes, and pixel-perfect interfaces designed around how your actual users think — not just what looks nice in a slide deck.</p>
           <div class="service-tags">
-            <span class="service-tag">Tracing</span>
-            <span class="service-tag">Logs</span>
-            <span class="service-tag">Alerts</span>
+            <span class="service-tag">Figma Prototypes</span>
+            <span class="service-tag">User Testing</span>
+            <span class="service-tag">Design Systems</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🚀</div>
+          <span class="service-number">04</span>
+          <h3 class="service-name">SEO &amp; Performance</h3>
+          <p class="service-desc">We optimize every project for speed and search from day one — clean code, compressed assets, and technical SEO baked in, not bolted on after launch.</p>
+          <div class="service-tags">
+            <span class="service-tag">Page Speed</span>
+            <span class="service-tag">Technical SEO</span>
+            <span class="service-tag">Core Web Vitals</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">🛒</div>
+          <span class="service-number">05</span>
+          <h3 class="service-name">E-Commerce Solutions</h3>
+          <p class="service-desc">Storefronts that convert, built on Shopify, WooCommerce, or fully custom — with checkout flows we stress-test before your customers ever see them.</p>
+          <div class="service-tags">
+            <span class="service-tag">Shopify</span>
+            <span class="service-tag">Custom Checkout</span>
+            <span class="service-tag">Payment Integration</span>
           </div>
         </div>
 
         <div class="service-card reveal reveal-delay-3">
           <div class="service-icon">🔧</div>
           <span class="service-number">06</span>
-          <h3 class="service-name">Open Dev Toolkit</h3>
-          <p class="service-desc">Pull your Vybe Score into anything — REST and GraphQL APIs, SDKs for 12+ languages, a scriptable CLI, and Terraform providers. If it can read JSON, it can read your Vybe.</p>
+          <h3 class="service-name">Support &amp; Maintenance</h3>
+          <p class="service-desc">Launch day isn't the finish line. We monitor, patch, and keep improving your site or app long after go-live, with a real human on the other end of the email.</p>
           <div class="service-tags">
-            <span class="service-tag">REST API</span>
-            <span class="service-tag">GraphQL</span>
-            <span class="service-tag">Terraform</span>
+            <span class="service-tag">Ongoing Updates</span>
+            <span class="service-tag">Bug Fixes</span>
+            <span class="service-tag">Priority Support</span>
           </div>
         </div>
       </div>
@@ -393,28 +409,28 @@
     <div class="container">
       <div class="process-header reveal">
         <span class="section-label">How It Works</span>
-        <h2 class="section-title" style="color: var(--color-text-primary);">From first commit to<br>your first Vybe Score</h2>
+        <h2 class="section-title" style="color: var(--color-text-primary);">From first sketch<br>to launch day</h2>
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
           <div class="process-step-num">01</div>
-          <h4 class="process-step-title">Plug In</h4>
-          <p class="process-step-desc">Link your GitHub, GitLab, or Bitbucket repo. We auto-detect your framework and wire up the pipeline in under a minute.</p>
+          <h4 class="process-step-title">Discover</h4>
+          <p class="process-step-desc">We start with a call to understand your business, your users, and what success actually looks like for this project.</p>
         </div>
         <div class="process-step reveal reveal-delay-1">
           <div class="process-step-num">02</div>
-          <h4 class="process-step-title">Set Your Baseline</h4>
-          <p class="process-step-desc">We watch your first few deploys and calculate your starting Vybe Score — no manual thresholds to tune by hand.</p>
+          <h4 class="process-step-title">Design</h4>
+          <p class="process-step-desc">Wireframes and clickable prototypes you can react to and revise — no surprises once development starts.</p>
         </div>
         <div class="process-step reveal reveal-delay-2">
           <div class="process-step-num">03</div>
-          <h4 class="process-step-title">Ship It</h4>
-          <p class="process-step-desc">Push a commit. Our pipeline builds, tests, and deploys to the global edge in seconds — then rescoring starts instantly.</p>
+          <h4 class="process-step-title">Develop</h4>
+          <p class="process-step-desc">Our team builds, tests, and refines your site or app, with regular check-ins so you always know where things stand.</p>
         </div>
         <div class="process-step reveal reveal-delay-3">
           <div class="process-step-num">04</div>
-          <h4 class="process-step-title">Stay In Sync</h4>
-          <p class="process-step-desc">Watch your Vybe Score live, get plain-English alerts the moment it dips, and fix issues before your users feel them.</p>
+          <h4 class="process-step-title">Launch &amp; Support</h4>
+          <p class="process-step-desc">We go live together, then stick around — monitoring performance and shipping improvements long after launch.</p>
         </div>
       </div>
     </div>
@@ -425,69 +441,69 @@
     <div class="container">
       <div class="portfolio-header">
         <div>
-          <span class="section-label reveal">Solutions</span>
-          <h2 class="section-title reveal reveal-delay-1">Every stack has<br>a Vybe worth checking.</h2>
+          <span class="section-label reveal">Portfolio</span>
+          <h2 class="section-title reveal reveal-delay-1">Work we're proud<br>to show off.</h2>
         </div>
         <div class="portfolio-filter reveal reveal-delay-2">
           <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="web">Web Apps</button>
-          <button class="filter-btn" data-filter="api">APIs</button>
-          <button class="filter-btn" data-filter="data">Data &amp; AI</button>
-          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="web">Websites</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-btn" data-filter="design">Branding &amp; UI</button>
+          <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
         </div>
       </div>
 
       <div class="portfolio-grid reveal reveal-delay-1">
         <div class="portfolio-item" data-category="web">
-          <img src="images/portfolio-1.png" alt="Web App Deployment">
+          <img src="images/portfolio-1.png" alt="Business Website Redesign">
           <div class="portfolio-overlay">
-            <div class="portfolio-category">Web Applications</div>
-            <div class="portfolio-name">A Checkout Flow That Never Dips Below 95</div>
+            <div class="portfolio-category">Business Website</div>
+            <div class="portfolio-name">A Homepage That Doubled Their Leads in 60 Days</div>
           </div>
           <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
 
-        <div class="portfolio-item" data-category="api">
-          <img src="images/portfolio-2.png" alt="API Gateway">
+        <div class="portfolio-item" data-category="ecommerce">
+          <img src="images/portfolio-2.png" alt="E-Commerce Storefront">
           <div class="portfolio-overlay">
-            <div class="portfolio-category">API Infrastructure</div>
-            <div class="portfolio-name">Scoring 40M Requests a Day, Per Endpoint</div>
+            <div class="portfolio-category">E-Commerce</div>
+            <div class="portfolio-name">A Storefront That Sells While You Sleep</div>
           </div>
           <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
 
-        <div class="portfolio-item" data-category="data">
-          <img src="images/portfolio-3.png" alt="Data Pipeline">
+        <div class="portfolio-item" data-category="design">
+          <img src="images/portfolio-3.png" alt="Brand and UI Design System">
           <div class="portfolio-overlay">
-            <div class="portfolio-category">Data Engineering</div>
-            <div class="portfolio-name">Catching Pipeline Drift Before the Dashboard Does</div>
-          </div>
-          <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-
-        <div class="portfolio-item" data-category="web">
-          <img src="images/portfolio-4.png" alt="E-commerce Platform">
-          <div class="portfolio-overlay">
-            <div class="portfolio-category">E-commerce</div>
-            <div class="portfolio-name">Headless Commerce That Survives Launch Day</div>
-          </div>
-          <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-
-        <div class="portfolio-item" data-category="data">
-          <img src="images/portfolio-5.png" alt="AI Platform">
-          <div class="portfolio-overlay">
-            <div class="portfolio-category">AI &amp; ML</div>
-            <div class="portfolio-name">Scoring Model Inference Latency at the Edge</div>
+            <div class="portfolio-category">Branding &amp; UI</div>
+            <div class="portfolio-name">A Design System Three Teams Now Share</div>
           </div>
           <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
 
         <div class="portfolio-item" data-category="mobile">
-          <img src="images/portfolio-6.png" alt="Mobile Backend">
+          <img src="images/portfolio-4.png" alt="Mobile App Launch">
           <div class="portfolio-overlay">
-            <div class="portfolio-category">Mobile Backend</div>
-            <div class="portfolio-name">One Vybe Score Across iOS, Android, and API</div>
+            <div class="portfolio-category">Mobile App</div>
+            <div class="portfolio-name">An App Store Featured Pick, Built in 10 Weeks</div>
+          </div>
+          <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <div class="portfolio-item" data-category="web">
+          <img src="images/portfolio-5.png" alt="Booking Web Application">
+          <div class="portfolio-overlay">
+            <div class="portfolio-category">Web Application</div>
+            <div class="portfolio-name">A Booking Platform That Never Double-Books</div>
+          </div>
+          <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+
+        <div class="portfolio-item" data-category="mobile">
+          <img src="images/portfolio-6.png" alt="Cross-Platform Mobile App">
+          <div class="portfolio-overlay">
+            <div class="portfolio-category">Mobile App</div>
+            <div class="portfolio-name">One Seamless Experience Across iOS and Android</div>
           </div>
           <a href="#" class="portfolio-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
@@ -500,8 +516,8 @@
     <div class="container">
       <div class="team-header reveal">
         <span class="section-label">Our Team</span>
-        <h2 class="section-title">The people behind<br>the score.</h2>
-        <p class="section-subtitle" style="margin: 16px auto 0;">Ex-Google, Stripe, and AWS engineers who got tired of five dashboards telling five different stories about the same outage.</p>
+        <h2 class="section-title">The people behind<br>the work.</h2>
+        <p class="section-subtitle" style="margin: 16px auto 0;">Ex-Google and agency-side designers and engineers who got tired of watching great ideas die in bad handoffs.</p>
       </div>
 
       <div class="team-grid">
@@ -549,10 +565,10 @@
 
         <div class="team-card reveal reveal-delay-3">
           <div class="team-card-image">
-            <img src="images/team-4.png" alt="Rohan Singh - VP of Product">
+            <img src="images/team-4.png" alt="Rohan Singh - Head of Client Success">
             <div class="team-card-overlay">
               <div class="team-name">Rohan Singh</div>
-              <div class="team-role">VP of Product</div>
+              <div class="team-role">Head of Client Success</div>
             </div>
             <div class="team-card-social">
               <a href="#" class="team-social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -569,8 +585,8 @@
     <div class="container">
       <div class="testimonials-header reveal">
         <span class="section-label">Testimonials</span>
-        <h2 class="section-title">Teams that found their Vybe.</h2>
-        <p class="section-subtitle">Hear from the CTOs, founders, and on-call engineers who stopped guessing and started scoring.</p>
+        <h2 class="section-title">Teams that love working with us.</h2>
+        <p class="section-subtitle">Hear from the founders and teams whose websites and apps we've shipped.</p>
       </div>
     </div>
 
@@ -579,7 +595,7 @@
         <!-- Cards -->
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Our Vybe Score caught a regression in canary before it ever reached full traffic. That one number replaced four dashboards and three Slack channels of finger-pointing."</p>
+          <p class="testimonial-text">"Digivyb didn't just build our site, they explained every decision along the way. Our old agency just handed us an invoice."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">AK</div>
             <div>
@@ -591,7 +607,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"We serve 40M API requests a day and used to fly blind on regional latency. Now the Vybe Score for each edge node tells us in seconds when something's off — before a single ticket comes in."</p>
+          <p class="testimonial-text">"Our checkout page loaded so slowly we were losing carts before checkout even opened. Digivyb rebuilt it, and our load time dropped from 9 seconds to under 2."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">SR</div>
             <div>
@@ -603,7 +619,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"SOC2 was non-negotiable for our enterprise deals. Digivyb folded our security posture straight into the Vybe Score, so compliance stopped being a once-a-year audit and became something we watch daily."</p>
+          <p class="testimonial-text">"We needed a mobile app fast, without cutting corners on accessibility. Digivyb shipped both in ten weeks, and it still runs flawlessly today."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">PG</div>
             <div>
@@ -615,7 +631,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"During our biggest launch, traffic spiked 100× and our Vybe Score dipped exactly 6 points before the autoscaler caught up. We knew the size of the problem before a single user complained."</p>
+          <p class="testimonial-text">"Launch day traffic tripled overnight and the site didn't blink. That's exactly what you want to hear from your dev team."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">VN</div>
             <div>
@@ -627,24 +643,24 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"A slow memory leak dragged our Vybe Score down two days before it would've paged anyone the old way. We shipped the fix on a Tuesday afternoon instead of a Saturday night."</p>
+          <p class="testimonial-text">"Every agency says they'll deliver a fast site. Digivyb is the first one that actually did, and kept it that way every month after."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">RA</div>
             <div>
               <div class="testimonial-author-name">Rahul Ahuja</div>
-              <div class="testimonial-author-title">Platform Engineer, HyperScale</div>
+              <div class="testimonial-author-title">Marketing Lead, HyperScale</div>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Junior engineers on my team check the Vybe Score before they check Slack. It's the first dashboard that's actually simple enough for someone's first day."</p>
+          <p class="testimonial-text">"Our team isn't technical, but Digivyb's updates always made sense to everyone in the room. That alone was worth switching agencies for."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">MS</div>
             <div>
               <div class="testimonial-author-name">Meera Shah</div>
-              <div class="testimonial-author-title">Engineering Manager, PulseAPI</div>
+              <div class="testimonial-author-title">Operations Lead, PulseAPI</div>
             </div>
           </div>
         </div>
@@ -652,7 +668,7 @@
         <!-- Duplicate for seamless loop -->
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Our Vybe Score caught a regression in canary before it ever reached full traffic. That one number replaced four dashboards and three Slack channels of finger-pointing."</p>
+          <p class="testimonial-text">"Digivyb didn't just build our site, they explained every decision along the way. Our old agency just handed us an invoice."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">AK</div>
             <div>
@@ -664,7 +680,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"We serve 40M API requests a day and used to fly blind on regional latency. Now the Vybe Score for each edge node tells us in seconds when something's off — before a single ticket comes in."</p>
+          <p class="testimonial-text">"Our checkout page loaded so slowly we were losing carts before checkout even opened. Digivyb rebuilt it, and our load time dropped from 9 seconds to under 2."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">SR</div>
             <div>
@@ -676,7 +692,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"SOC2 was non-negotiable for our enterprise deals. Digivyb folded our security posture straight into the Vybe Score, so compliance stopped being a once-a-year audit and became something we watch daily."</p>
+          <p class="testimonial-text">"We needed a mobile app fast, without cutting corners on accessibility. Digivyb shipped both in ten weeks, and it still runs flawlessly today."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">PG</div>
             <div>
@@ -688,7 +704,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"During our biggest launch, traffic spiked 100× and our Vybe Score dipped exactly 6 points before the autoscaler caught up. We knew the size of the problem before a single user complained."</p>
+          <p class="testimonial-text">"Launch day traffic tripled overnight and the site didn't blink. That's exactly what you want to hear from your dev team."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">VN</div>
             <div>
@@ -700,24 +716,24 @@
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"A slow memory leak dragged our Vybe Score down two days before it would've paged anyone the old way. We shipped the fix on a Tuesday afternoon instead of a Saturday night."</p>
+          <p class="testimonial-text">"Every agency says they'll deliver a fast site. Digivyb is the first one that actually did, and kept it that way every month after."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">RA</div>
             <div>
               <div class="testimonial-author-name">Rahul Ahuja</div>
-              <div class="testimonial-author-title">Platform Engineer, HyperScale</div>
+              <div class="testimonial-author-title">Marketing Lead, HyperScale</div>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Junior engineers on my team check the Vybe Score before they check Slack. It's the first dashboard that's actually simple enough for someone's first day."</p>
+          <p class="testimonial-text">"Our team isn't technical, but Digivyb's updates always made sense to everyone in the room. That alone was worth switching agencies for."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar">MS</div>
             <div>
               <div class="testimonial-author-name">Meera Shah</div>
-              <div class="testimonial-author-title">Engineering Manager, PulseAPI</div>
+              <div class="testimonial-author-title">Operations Lead, PulseAPI</div>
             </div>
           </div>
         </div>
@@ -730,7 +746,7 @@
     <div class="container">
       <div class="pricing-header reveal">
         <span class="section-label">Pricing</span>
-        <h2 class="section-title">Find your Vybe, then scale it.</h2>
+        <h2 class="section-title">Start a project, or grow with us.</h2>
       </div>
 
       <div class="pricing-toggle-wrap reveal reveal-delay-1">
@@ -752,37 +768,36 @@
             <span class="pricing-amount price-annual" style="display:none">0</span>
             <span class="pricing-period">/mo</span>
           </div>
-          <p class="pricing-desc">Perfect for side projects and prototypes — get your first Vybe Score for free.</p>
+          <p class="pricing-desc">Perfect for a single website or app project — no retainer, no lock-in, just a free consultation to start.</p>
           <ul class="pricing-features">
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 3 Projects, 3 Vybe Scores</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 100GB Bandwidth / month</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Edge deployments (10 regions)</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Community support</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Daily score history</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Free consultation and project scoping</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> One project at a time</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Fixed-price project quotes</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Email support during the project</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 30-day post-launch bug fixes</li>
           </ul>
-          <a href="#contact" class="pricing-cta pricing-cta-outline">Get Your Vybe Free</a>
+          <a href="#contact" class="pricing-cta pricing-cta-outline">Get A Free Quote</a>
         </div>
 
         <div class="pricing-card featured reveal reveal-delay-1">
           <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-plan">Momentum</div>
+          <div class="pricing-plan">Growth</div>
           <div class="pricing-price">
             <span class="pricing-currency">$</span>
-            <span class="pricing-amount price-monthly">49</span>
-            <span class="pricing-amount price-annual" style="display:none">39</span>
+            <span class="pricing-amount price-monthly">490</span>
+            <span class="pricing-amount price-annual" style="display:none">390</span>
             <span class="pricing-period">/mo</span>
           </div>
-          <p class="pricing-desc">For growing teams that want their Vybe Score wired into every pipeline and Slack channel.</p>
+          <p class="pricing-desc">For businesses that want a dedicated team shipping improvements every month, not just once at launch.</p>
           <ul class="pricing-features">
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Unlimited Projects &amp; Vybe Scores</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 1TB Bandwidth / month</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Global Edge (100+ regions)</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Vybe Score Engine, full breakdown</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Advanced observability</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Priority email support</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Custom domains (unlimited)</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Unlimited small requests &amp; updates</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Dedicated designer + developer pair</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Monthly performance reporting</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Priority turnaround (48-hour response)</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Performance &amp; SEO monitoring</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Free redesign consultation each quarter</li>
           </ul>
-          <a href="#contact" class="pricing-cta pricing-cta-solid">Start Momentum Trial</a>
+          <a href="#contact" class="pricing-cta pricing-cta-solid">Start Growth Retainer</a>
         </div>
 
         <div class="pricing-card reveal reveal-delay-2">
@@ -792,14 +807,14 @@
             <span class="pricing-amount price-monthly" style="font-size: 36px; letter-spacing: -0.02em;">Custom</span>
             <span class="pricing-amount price-annual" style="display:none; font-size: 36px; letter-spacing: -0.02em;">Custom</span>
           </div>
-          <p class="pricing-desc">For large-scale teams that need SLAs, compliance, and a Vybe Score dashboard for every business unit.</p>
+          <p class="pricing-desc">For larger organizations that need a dedicated team, custom integrations, and enterprise-grade SLAs across every project.</p>
           <ul class="pricing-features">
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Everything in Momentum</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Dedicated infrastructure</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> SOC2, HIPAA, GDPR</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 99.99% SLA guarantee</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 24/7 dedicated support</li>
-            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Custom integrations &amp; SSO</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Everything in Growth</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Dedicated project &amp; account manager</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Custom integrations &amp; enterprise SSO</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> 99.9% hosting uptime commitment</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Quarterly business reviews</li>
+            <li class="pricing-feature"><span class="pricing-feature-check">✓</span> Priority 24/7 support</li>
           </ul>
           <a href="#contact" class="pricing-cta pricing-cta-outline">Talk to Sales</a>
         </div>
@@ -813,7 +828,7 @@
       <div class="blog-header">
         <div>
           <span class="section-label reveal">Field Notes</span>
-          <h2 class="section-title reveal reveal-delay-1">From the team<br>watching the score.</h2>
+          <h2 class="section-title reveal reveal-delay-1">From the team<br>behind the builds.</h2>
         </div>
         <a href="#" class="btn-outline reveal reveal-delay-2">View All Posts</a>
       </div>
@@ -821,45 +836,45 @@
       <div class="blog-grid">
         <div class="blog-card reveal">
           <div class="blog-image">
-            <img src="images/blog-1.png" alt="Vybe Score Engine Article">
+            <img src="images/blog-1.png" alt="Website Performance Article">
           </div>
           <div class="blog-content">
             <div class="blog-meta">
-              <span class="blog-category">Inside Vybe</span>
+              <span class="blog-category">Web Performance</span>
               <span class="blog-date">July 10, 2026</span>
             </div>
-            <h3 class="blog-title">What Actually Goes Into a Vybe Score? A Breakdown</h3>
-            <p class="blog-excerpt">We trained our scoring model on 2M+ build logs and a decade of postmortems. Here's the exact weighting behind latency, error budget, and deploy history — no black box.</p>
+            <h3 class="blog-title">5 Signs Your Website Is Quietly Costing You Customers</h3>
+            <p class="blog-excerpt">Slow load times, confusing navigation, forms that don't work on mobile — we see the same costly mistakes again and again. Here's how to spot them on your own site.</p>
             <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
         <div class="blog-card reveal reveal-delay-1">
           <div class="blog-image">
-            <div class="blog-image-placeholder blog-gradient-2">Edge Computing</div>
+            <div class="blog-image-placeholder blog-gradient-2">Performance</div>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
-              <span class="blog-category">Architecture</span>
+              <span class="blog-category">Performance</span>
               <span class="blog-date">June 28, 2026</span>
             </div>
-            <h3 class="blog-title">Why Your Edge Network Needs a Score, Not Just a Map</h3>
-            <p class="blog-excerpt">A dashboard full of green dots told us nothing about which region was about to fail. Here's how we turned 100+ PoPs into one number worth watching.</p>
+            <h3 class="blog-title">Why Your Website's First 3 Seconds Decide Everything</h3>
+            <p class="blog-excerpt">A pretty homepage means nothing if it takes 6 seconds to load. Here's how we get client sites under 2 seconds without cutting corners on design.</p>
             <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
         <div class="blog-card reveal reveal-delay-2">
           <div class="blog-image">
-            <div class="blog-image-placeholder blog-gradient-3">Open Source</div>
+            <div class="blog-image-placeholder blog-gradient-3">Mobile Development</div>
           </div>
           <div class="blog-content">
             <div class="blog-meta">
-              <span class="blog-category">Open Source</span>
+              <span class="blog-category">Mobile Development</span>
               <span class="blog-date">June 14, 2026</span>
             </div>
-            <h3 class="blog-title">We Open-Sourced the Vybe Score Engine. Here's What Happened.</h3>
-            <p class="blog-excerpt">Six months after open-sourcing our scoring model, CLI, and SDKs, we have 4K+ GitHub stars, 200+ contributors, and a formula that keeps getting sharper.</p>
+            <h3 class="blog-title">React Native vs. Flutter: What We Actually Recommend</h3>
+            <p class="blog-excerpt">We've shipped apps in both. Here's the honest, no-hype breakdown of when each one is the right call for your budget and timeline.</p>
             <a href="#" class="blog-read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -873,8 +888,8 @@
       <div class="faq-layout">
         <div class="faq-left reveal">
           <span class="section-label">FAQ</span>
-          <h2 class="section-title">Got questions<br>about your Vybe?</h2>
-          <p class="section-subtitle">Can't find what you're looking for? Reach out to our engineering team directly.</p>
+          <h2 class="section-title">Got questions?<br>We've got answers.</h2>
+          <p class="section-subtitle">Can't find what you're looking for? Reach out to our team directly.</p>
           <div style="margin-top: 32px;">
             <a href="#contact" class="btn-primary">
               <span>Contact Us</span>
@@ -886,61 +901,61 @@
         <div class="faq-list reveal reveal-delay-1">
           <div class="faq-item">
             <button class="faq-question">
-              What exactly is a Vybe Score?
+              What makes Digivyb different from other agencies?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>It's a single 0–100 number that blends latency, error rate, deploy frequency, and rollback history into one honest read on how your system is actually doing. The formula is open source, so you can see exactly why your score moved — no black box, no vague "health: good" badge.</p>
+              <p>We keep things simple: clear timelines, fixed-price quotes, and direct access to the people actually building your project — no account managers relaying messages between you and the developers.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              What frameworks and languages does Digivyb support?
+              What technologies do you build with?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>We support 40+ frameworks out of the box — React, Next.js, Vue, Nuxt, SvelteKit, Angular, Django, Rails, FastAPI, Laravel, Spring Boot, and more. For languages, we support Node.js, Python, Go, Rust, Java, PHP, Ruby, and .NET. If it can be containerized, it can be scored.</p>
+              <p>We build with the tools that fit the job, not just what we know best. For the web: React, Next.js, Vue, and WordPress for content-heavy sites. For mobile: React Native and Flutter for cross-platform apps, or native Swift and Kotlin when performance demands it.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              How does the global edge network feed into my score?
+              How long does a typical website or app take?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Your app is automatically distributed to 100+ Points of Presence (PoPs) across 6 continents, and each region reports its own latency and error data straight into your Vybe Score. If one region quietly degrades, the score reflects it immediately instead of averaging the problem away.</p>
+              <p>A marketing website usually ships in 3–5 weeks. A custom web app or mobile app typically takes 8–14 weeks depending on scope. We'll give you a real timeline in writing before any work starts, not a vague "it depends."</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              Is there a self-hosted or on-premise option?
+              Do you offer ongoing support after launch?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes — our Enterprise plan includes a self-hosted option that you can run on your own AWS, GCP, or Azure infrastructure. You get the full Digivyb experience, Vybe Score engine included, on your own VPC, with data sovereignty and compliance guarantees. Reach out to our sales team for setup details.</p>
+              <p>Yes — launch day isn't a handoff and goodbye. Every project includes 30 days of free bug fixes, and our Growth plan keeps a dedicated team on your roadmap long after.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              What does your SLA cover?
+              Can you redesign or improve our existing website?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Our Momentum plan has a 99.9% uptime SLA. Enterprise plans get a 99.99% SLA with automatic service credits for any downtime beyond the threshold. Our status page at status.digivyb.io shows real-time and historical Vybe Score across all regions and services.</p>
+              <p>Absolutely, and it's often where we start. We'll run a free audit of your current site first, so you know exactly what's holding it back before we touch a single line of code.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              Can I migrate from my existing cloud provider?
+              What if we're not happy with the design?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Absolutely. We have migration guides for AWS, GCP, Azure, Heroku, Render, and Railway. Most teams complete their migration in under a week with zero downtime using our blue-green deployment strategy, and your Vybe Score starts tracking from day one. Enterprise customers get a dedicated migration engineer at no extra cost.</p>
+              <p>We build in checkpoints, not surprises. You'll review and approve wireframes and design mockups before development starts, with revision rounds built into every project.</p>
             </div>
           </div>
         </div>
@@ -954,8 +969,8 @@
       <div class="contact-layout">
         <div class="contact-left">
           <span class="section-label reveal">Contact Us</span>
-          <h2 class="section-title reveal reveal-delay-1">Let's find your<br>Vybe together.</h2>
-          <p class="section-subtitle reveal reveal-delay-2">Ready to see your first Vybe Score? Book a demo or drop us a message and our team will get back to you within a few hours.</p>
+          <h2 class="section-title reveal reveal-delay-1">Let's build something<br>great together.</h2>
+          <p class="section-subtitle reveal reveal-delay-2">Ready to get started? Book a free consultation or drop us a message and our team will get back to you within a few hours.</p>
 
           <div class="contact-info-items reveal reveal-delay-2">
             <div class="contact-info-item">
@@ -975,8 +990,8 @@
             <div class="contact-info-item">
               <div class="contact-info-icon">💬</div>
               <div>
-                <div class="contact-info-label">Community</div>
-                <div class="contact-info-value">discord.gg/digivyb · 8K+ members</div>
+                <div class="contact-info-label">Response Time</div>
+                <div class="contact-info-value">Within a few hours, every time</div>
               </div>
             </div>
           </div>
@@ -1013,18 +1028,19 @@
                 <label class="form-label" for="contact-service">What are you looking for?</label>
                 <select id="contact-service" class="form-select">
                   <option value="">Select a use case...</option>
-                  <option>Get My First Vybe Score</option>
-                  <option>Web App Deployment</option>
-                  <option>API Infrastructure</option>
-                  <option>Enterprise / Self-hosted</option>
-                  <option>Migration from AWS/GCP</option>
-                  <option>Book a Product Demo</option>
+                  <option>Get A Free Quote</option>
+                  <option>Website Development</option>
+                  <option>Mobile App Development</option>
+                  <option>E-Commerce Store</option>
+                  <option>UI/UX Design</option>
+                  <option>Ongoing Support &amp; Maintenance</option>
+                  <option>Book a Free Consultation</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="contact-message">Tell us about your stack</label>
-                <textarea id="contact-message" class="form-textarea" placeholder="What's your current setup? What problem are you trying to solve? How many devs on your team?" required></textarea>
+                <label class="form-label" for="contact-message">Tell us about your project</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="What are you trying to build? Do you have an existing website or app? What's your timeline and budget range?" required></textarea>
               </div>
 
               <div class="form-submit">
@@ -1052,7 +1068,7 @@
           <a href="#hero" class="footer-brand-logo">
             <img src="images/digivyb-logo.png" alt="Digivyb" class="logo-image">
           </a>
-          <p class="footer-brand-desc">One living score for the health of everything you ship. Deploy with confidence, watch your Vybe climb, sleep through the incident that never happened.</p>
+          <p class="footer-brand-desc">A web and app development studio that designs, builds, and supports digital products for ambitious businesses.</p>
           <div class="footer-social">
             <a href="#" class="footer-social-btn"><i class="fa-brands fa-github"></i></a>
             <a href="#" class="footer-social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -1063,26 +1079,25 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Product</h4>
+          <h4 class="footer-col-title">Services</h4>
           <ul class="footer-links">
-            <li><a href="#services">Features</a></li>
-            <li><a href="#portfolio">Solutions</a></li>
+            <li><a href="#services">Website Development</a></li>
+            <li><a href="#services">App Development</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Changelog</a></li>
-            <li><a href="#contact">Roadmap</a></li>
-            <li><a href="#contact">Status</a></li>
+            <li><a href="#contact">Free Consultation</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Developers</h4>
+          <h4 class="footer-col-title">Resources</h4>
           <ul class="footer-links">
-            <li><a href="#contact">Documentation</a></li>
-            <li><a href="#contact">API Reference</a></li>
-            <li><a href="#contact">CLI Guide</a></li>
             <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Open Source</a></li>
-            <li><a href="#contact">Community</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#portfolio">Case Studies</a></li>
+            <li><a href="#contact">Get a Quote</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
@@ -1092,12 +1107,11 @@
             <li><a href="#about">About</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Careers</a></li>
-            <li><a href="#contact">Press</a></li>
             <li><a href="mailto:hello@digivyb.io">Contact</a></li>
           </ul>
           <div style="margin-top: 24px;">
             <a href="#contact" class="btn-primary" style="font-size:13px; padding: 11px 20px;">
-              <span>Start for Free</span>
+              <span>Get A Free Quote</span>
             </a>
           </div>
         </div>

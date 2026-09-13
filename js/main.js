@@ -399,8 +399,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeIcon = document.getElementById('theme-icon');
   const htmlEl = document.documentElement;
 
-  // Apply saved theme immediately (before paint)
-  const savedTheme = localStorage.getItem('dv-theme') || 'light';
+  // Theme switcher is hidden for now — force light mode regardless of
+  // any theme saved earlier, since there's no UI to correct it back.
+  const savedTheme = 'light';
   htmlEl.setAttribute('data-theme', savedTheme);
   syncThemeIcon(savedTheme);
 

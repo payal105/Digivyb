@@ -111,8 +111,10 @@
 }
 
 [data-theme="light"] #hero::after {
-  background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0,0,0,0.07) 1px, transparent 1px);
   background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 0%, transparent 90%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 0%, transparent 90%);
 }
 
 [data-theme="light"] #hero {
@@ -919,17 +921,171 @@ body::before {
   mix-blend-mode: luminosity;
 }
 
+/* Background video — sits behind everything else in .hero-bg. Kept
+   fairly dim so the glow tint and scrim (below) can do the work of
+   keeping the headline and description readable regardless of what
+   the footage looks like. */
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+[data-theme="light"] .hero-bg-video {
+  opacity: 0.3;
+}
+
+/* Readability scrim — nearly opaque where the headline/body copy
+   sits (left side), fading away toward the terminal card (right
+   side), which already has its own solid background. */
+.hero-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    var(--color-bg) 0%,
+    var(--color-bg) 28%,
+    rgba(10,13,23,0.55) 50%,
+    rgba(10,13,23,0.15) 72%,
+    transparent 90%
+  );
+}
+
+[data-theme="light"] .hero-bg-scrim {
+  background: linear-gradient(
+    115deg,
+    var(--color-bg) 0%,
+    var(--color-bg) 28%,
+    rgba(244,246,251,0.82) 50%,
+    rgba(244,246,251,0.3) 72%,
+    transparent 90%
+  );
+}
+
+/* Video is heavy for mobile data/battery and the layout stacks the
+   terminal card below the copy there anyway, so fall back to the
+   CSS-only glow background under this breakpoint. */
+@media (max-width: 768px) {
+  .hero-bg-video {
+    display: none;
+  }
+}
+
 .hero-bg-gradient {
   position: absolute;
   inset: 0;
   background: transparent;
 }
 
+/* Glowing gradient orbs — soft, drifting color pools that give the
+   hero its depth and "eye-catching" motion without touching the
+   copy or the terminal card (both sit in a higher stacking layer). */
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  will-change: transform;
+  animation: heroFloat 16s ease-in-out infinite;
+}
+
+.hero-glow-1 {
+  top: -12%;
+  left: -8%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(105,200,199,0.5) 0%, rgba(105,200,199,0) 70%);
+  animation-duration: 18s;
+}
+
+.hero-glow-2 {
+  bottom: -18%;
+  right: -6%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(61,143,151,0.45) 0%, rgba(61,143,151,0) 70%);
+  animation-duration: 22s;
+  animation-delay: -6s;
+}
+
+.hero-glow-3 {
+  top: 28%;
+  left: 38%;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(105,200,199,0.35) 0%, rgba(105,200,199,0) 70%);
+  animation-duration: 14s;
+  animation-delay: -3s;
+}
+
+[data-theme="light"] .hero-glow-1 {
+  background: radial-gradient(circle, rgba(21,143,141,0.28) 0%, rgba(21,143,141,0) 70%);
+}
+
+[data-theme="light"] .hero-glow-2 {
+  background: radial-gradient(circle, rgba(20,95,101,0.24) 0%, rgba(20,95,101,0) 70%);
+}
+
+[data-theme="light"] .hero-glow-3 {
+  background: radial-gradient(circle, rgba(21,143,141,0.18) 0%, rgba(21,143,141,0) 70%);
+}
+
+@keyframes heroFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(4%, 6%) scale(1.08); }
+  66%  { transform: translate(-5%, -3%) scale(0.96); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Blueprint grid — faint technical linework that fades out toward the
+   edges so it reads as texture, not a hard-edged overlay. */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(105,200,199,0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105,200,199,0.09) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 0%, transparent 75%);
+}
+
+[data-theme="light"] .hero-grid {
+  background-image:
+    linear-gradient(rgba(21,143,141,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,143,141,0.1) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow {
+    animation: none;
+  }
+
+  .hero-bg-video {
+    display: none;
+  }
+}
+
+/* The site-wide .container is centered with a 1200px cap, which is
+   fine for single-column sections, but in the hero it left a large
+   unused gutter on wide screens: the terminal card already breaks
+   out to hug the true right edge, while the text stayed trapped
+   inside the centered box. Letting the hero's container stretch full
+   width (with its own responsive side padding) lets the copy use
+   that reclaimed space instead of leaving it empty. */
+#hero .container {
+  max-width: none;
+  margin: 0;
+  padding: 0 clamp(24px, 6vw, 96px);
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
   padding-top: 100px;
-  max-width: 680px;
+  max-width: 760px;
 }
 
 .hero-badge {
@@ -939,7 +1095,7 @@ body::before {
   background: rgba(105,200,199,0.08);
   border: 1px solid rgba(105,200,199,0.25);
   color: var(--color-accent);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -965,9 +1121,9 @@ body::before {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(44px, 6.5vw, 88px);
+  font-size: clamp(34px, 4.8vw, 58px);
   font-weight: 700;
-  line-height: 1.04;
+  line-height: 1.1;
   letter-spacing: -0.04em;
   color: var(--color-text-primary);
   margin-bottom: 28px;
@@ -989,10 +1145,10 @@ body::before {
 }
 
 .hero-description {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--color-text-secondary);
   line-height: 1.75;
-  max-width: 520px;
+  max-width: 580px;
   margin-bottom: 44px;
 }
 
@@ -1009,9 +1165,9 @@ body::before {
   gap: 10px;
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 14px 32px;
+  padding: 15px 34px;
   border-radius: var(--radius-full);
   transition: var(--transition);
   box-shadow: 0 4px 24px rgba(105,200,199,0.25);
@@ -1049,7 +1205,7 @@ body::before {
 
 .hero-stat-number {
   font-family: var(--font-heading);
-  font-size: 34px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--color-text-primary);
   letter-spacing: -0.03em;
@@ -1066,7 +1222,11 @@ body::before {
 /* Terminal Card */
 .hero-terminal-wrap {
   position: absolute;
-  right: 0;
+  /* Hugs the true edge like before on normal screens, but on very
+     wide monitors it eases inward (as if pinned to the edge of an
+     ~1480px centered column) instead of leaving an ever-growing dead
+     gap between the copy and the card. */
+  right: max(0px, calc((100vw - 1480px) / 2));
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
