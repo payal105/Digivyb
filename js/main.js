@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCursor();
 
     // Hover states for interactive elements
-    const hoverEls = document.querySelectorAll('a, button, .portfolio-item, .service-card, .team-card, .blog-card, .filter-btn, .faq-question');
+    const hoverEls = document.querySelectorAll('a, button, .portfolio-item, .service-card, .team-card, .filter-btn');
     hoverEls.forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.classList.add('cursor-hover');
@@ -269,58 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =============================================
-     10. PRICING TOGGLE (MONTHLY / ANNUAL)
-  ============================================= */
-  const pricingToggle = document.getElementById('pricing-toggle');
-  const monthlyPrices = document.querySelectorAll('.price-monthly');
-  const annualPrices = document.querySelectorAll('.price-annual');
-  const monthlyLabel = document.getElementById('monthly-label');
-  const annualLabel = document.getElementById('annual-label');
-
-  function updatePricing() {
-    const isAnnual = pricingToggle?.checked;
-
-    monthlyPrices.forEach(el => {
-      el.style.display = isAnnual ? 'none' : 'inline';
-    });
-    annualPrices.forEach(el => {
-      el.style.display = isAnnual ? 'inline' : 'none';
-    });
-
-    monthlyLabel?.classList.toggle('active', !isAnnual);
-    annualLabel?.classList.toggle('active', isAnnual);
-  }
-
-  pricingToggle?.addEventListener('change', updatePricing);
-  updatePricing(); // Initialize
-
-
-  /* =============================================
-     11. FAQ ACCORDION
-  ============================================= */
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question?.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-
-      // Close all
-      faqItems.forEach(i => i.classList.remove('open'));
-
-      // Open clicked (if it was closed)
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-    });
-  });
-
-  // Open first FAQ by default
-  faqItems[0]?.classList.add('open');
-
-
-  /* =============================================
-     12. CONTACT FORM SUBMIT
+     10. CONTACT FORM SUBMIT
   ============================================= */
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
@@ -348,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =============================================
-     13. BACK TO TOP
+     11. BACK TO TOP
   ============================================= */
   const backToTopBtn = document.getElementById('back-to-top');
   backToTopBtn?.addEventListener('click', () => {
@@ -357,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =============================================
-     14. NUMBERS COUNTER ANIMATION
+     12. NUMBERS COUNTER ANIMATION
   ============================================= */
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
@@ -387,13 +336,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =============================================
-     15. SCROLL-BASED HEADER NAV STYLE
+     13. SCROLL-BASED HEADER NAV STYLE
   ============================================= */
   // Run once on load
   updateActiveNavLink();
 
   /* =============================================
-     16. LIGHT / DARK THEME TOGGLE
+     14. LIGHT / DARK THEME TOGGLE
   ============================================= */
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const themeIcon = document.getElementById('theme-icon');
@@ -437,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =============================================
-     17. INTERACTIVE PARTICLE NETWORK
+     15. INTERACTIVE PARTICLE NETWORK
   ============================================= */
   (function initParticles() {
     const canvas = document.getElementById('particle-canvas');
