@@ -588,3 +588,100 @@
 }
 
 .skip-link:focus { top: 16px; }
+
+/* =========================================================
+   Mobile / touch refinements
+   ========================================================= */
+
+/* Touch screens have no hover, so portfolio captions and the link button must
+   be visible without it. */
+@media (hover: none) {
+  .portfolio-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 55%, transparent 100%); }
+  .portfolio-link { opacity: 1; transform: scale(1); width: 44px; height: 44px; }
+  .portfolio-name { color: #fff; }
+}
+
+@media (max-width: 768px) {
+  /* Header: the quote CTA lives in the hero, menu and footer, so on phones keep
+     the bar to logo + menu button (the button was wrapping onto two lines). */
+  .header-cta .btn-outline { display: none; }
+
+  /* Hamburger was white-on-white over the dark hero. */
+  #header.over-hero .hamburger-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  #header.over-hero .hamburger-btn span { background: #fff; }
+  .hamburger-btn { width: 44px; height: 44px; }
+
+  /* Home hero: clear the fixed header, and drop the scroll cue that collided
+     with the stats. */
+  #hero:not(.page-hero) .hero-content { padding-top: 124px; padding-bottom: 56px; }
+  .hero-scroll-indicator { display: none; }
+  .hero-badge { font-size: 11.5px; letter-spacing: 0.06em; }
+
+  /* Comfortable tap targets */
+  .footer-links { gap: 0; }
+  .footer-links a { display: inline-block; padding: 11px 0; }
+  .footer-bottom-links { gap: 20px; flex-wrap: wrap; }
+  .footer-bottom-links a { display: inline-block; padding: 10px 0; }
+  .menu-overlay-social a { display: inline-block; padding: 12px 0; }
+  .breadcrumbs a { display: inline-block; padding: 6px 0; }
+  .menu-overlay-nav a.menu-sub-link { padding-top: 12px; padding-bottom: 12px; }
+  .faq-item summary { min-height: 56px; display: flex; align-items: center; }
+
+  /* 16px inputs stop iOS Safari zooming the page when a field is focused. */
+  .form-input,
+  .form-select,
+  .form-textarea { font-size: 16px; padding: 14px 16px; }
+  .form-submit { flex-direction: column; align-items: stretch; }
+  .form-submit .btn-primary { justify-content: center; padding: 15px 28px; }
+
+  .hero-btn-secondary { padding: 14px 4px; }
+}
+
+@media (max-width: 560px) {
+  /* Four narrow columns of centred text read poorly; stack the steps. */
+  .process-steps { grid-template-columns: 1fr; gap: 28px; }
+  .process-steps::before { display: none; }
+  .hero-stats { margin-top: 48px; padding-top: 28px; }
+}
+
+/* Legibility of captions that sit on photos (touch screens always show them) */
+@media (hover: none) {
+  .portfolio-overlay { background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.62) 45%, transparent 88%); }
+  .portfolio-category { color: #8FE3E1; }
+  .team-card-overlay { background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 60%, transparent 100%); }
+  .team-role { color: #8FE3E1; }
+}
+
+@media (max-width: 768px) {
+  .contact-info-value a { display: inline-block; padding: 8px 0; }
+}
+
+/* Tablets and narrow laptops: logo + five links + CTA don't fit comfortably
+   below ~900px, so use the menu button there too. */
+@media (max-width: 900px) {
+  .header-nav { display: none; }
+  .hamburger-btn { display: flex; width: 44px; height: 44px; }
+  .header-cta .btn-outline { display: none; }
+  #header.over-hero .hamburger-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Mobile menu panel: sit above the fixed header (it was showing through),
+   scroll on short screens, and let the social links wrap instead of overflowing. */
+#menu-overlay {
+  z-index: 1100;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.menu-overlay-social { flex-wrap: wrap; gap: 4px 22px; }
+
+/* The "scroll" cue crowds the stats row on shorter laptop screens. */
+@media (max-height: 960px) {
+  .hero-scroll-indicator { display: none; }
+}
