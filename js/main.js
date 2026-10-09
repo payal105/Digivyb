@@ -1,5 +1,5 @@
 /* =========================================================
-   DIGIVYB — Main JavaScript
+   digivyb — Main JavaScript
    All interactive features, animations, UI logic
    ========================================================= */
 

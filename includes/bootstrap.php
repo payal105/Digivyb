@@ -5,14 +5,28 @@ declare(strict_types=1);
  * Shared bootstrap: site config + small helpers. Every page requires this first.
  */
 
-const SITE_NAME = 'Digivyb';
-// Inbox that receives contact-form enquiries. Change to the real address.
-const CONTACT_EMAIL = 'hello@digivyb.io';
-// Production hostname, e.g. 'digivyb.io'. When set it is used for canonical
-// URLs, the sitemap and mail instead of the (spoofable) Host header.
-const SITE_HOST = '';
+const SITE_NAME = 'digivyb';
+// Public contact address: shown on the site and used as the sender of form emails.
+const CONTACT_EMAIL = 'info@digivyb.com';
+// "From" address on contact-form emails. It only labels the message; it does not
+// need to be a real mailbox, but it must be on the site's own domain.
+const MAIL_FROM = 'no-reply@digivyb.com';
+// Private inbox that actually receives contact-form enquiries (never shown on the site).
+const FORM_RECIPIENT = 'digivyb@gmail.com';
+// Production hostname. Used for canonical URLs, the sitemap and mail instead of
+// the (spoofable) Host header. www.digivyb.com redirects here (see .htaccess).
+const SITE_HOST = 'digivyb.com';
+
+// Keep search engines out while the content is still being finalised.
+// Set to true when the site is ready to be found on Google.
+const ALLOW_INDEXING = false;
 const INCLUDES_DIR = __DIR__;
 const ROOT_DIR = __DIR__ . '/..';
+
+// Belt and braces alongside the robots meta tag: also covers non-HTML responses.
+if (!ALLOW_INDEXING && PHP_SAPI !== 'cli' && !headers_sent()) {
+    header('X-Robots-Tag: noindex, nofollow');
+}
 
 // Never show PHP errors to visitors; log them instead.
 ini_set('display_errors', '0');

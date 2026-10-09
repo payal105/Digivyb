@@ -1,9 +1,13 @@
-# ---- Digivyb: Apache / LiteSpeed (Hostinger) ----
+# ---- digivyb: Apache / LiteSpeed (Hostinger) ----
 DirectoryIndex index.php
 Options -Indexes
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Canonical host: send www.digivyb.com to digivyb.com
+  RewriteCond %{HTTP_HOST} ^www\.digivyb\.com$ [NC]
+  RewriteRule ^(.*)$ https://digivyb.com/$1 [R=301,L]
 
   # Generated robots/sitemap (public names only; the .php files themselves stay hidden below)
   RewriteRule ^robots\.txt$ robots.php [END]

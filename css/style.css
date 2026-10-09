@@ -1,5 +1,5 @@
 /* =========================================
-   DIGIVYB — Tech Startup Stylesheet
+   digivyb — Tech Startup Stylesheet
    Dark Mode · Space Grotesk · Glassmorphism
    ========================================= */
 
@@ -17,7 +17,7 @@
   --color-text-secondary: #A1A1AA;
   --color-text-muted: #71717A;
 
-  /* Accent — Digivyb Teal */
+  /* Accent — digivyb Teal */
   --color-accent: #69C8C7;
   --color-accent-2: #3D8F97;
   --color-accent-hover: #4FB0AE;

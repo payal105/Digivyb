@@ -5,7 +5,7 @@ require_once __DIR__ . '/includes/bootstrap.php';
 
 $page = [
     'title' => 'Our Work',
-    'description' => 'A selection of websites, e-commerce stores, web apps, mobile apps and brand work from the Digivyb studio.',
+    'description' => 'A selection of websites, e-commerce stores, web apps, mobile apps and brand work from the digivyb studio.',
     'path' => '/work',
     'nav' => 'work',
 ];

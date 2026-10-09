@@ -30,7 +30,7 @@ $navItems = [
   <div id="preloader">
     <div class="preloader-logo">Tuning Your Vybe</div>
     <div class="preloader-letters">
-<?php foreach (str_split('DIGIVYB') as $letter) : ?>
+<?php foreach (str_split('digivyb') as $letter) : ?>
       <span class="preloader-letter"><?= e($letter) ?></span>
 <?php endforeach; ?>
     </div>

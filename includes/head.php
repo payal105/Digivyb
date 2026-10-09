@@ -7,11 +7,11 @@ declare(strict_types=1);
  */
 
 $pageTitle = (string) ($page['title'] ?? SITE_NAME);
-$fullTitle = $pageTitle === SITE_NAME ? SITE_NAME : $pageTitle . ' | ' . SITE_NAME;
+$fullTitle = (string) ($page['full_title'] ?? ($pageTitle . ' | ' . SITE_NAME));
 $pageDescription = (string) ($page['description'] ?? '');
 $canonical = site_url((string) ($page['path'] ?? '/'));
 $ogImage = site_url('/images/digivyb-logo.png');
-$robots = (string) ($page['robots'] ?? 'index, follow');
+$robots = ALLOW_INDEXING ? (string) ($page['robots'] ?? 'index, follow') : 'noindex, nofollow';
 ?>
 <!DOCTYPE html>
 <html lang="en">

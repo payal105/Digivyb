@@ -149,7 +149,6 @@ function contact_rate_limited(string $ip): bool
 /** Sends the enquiry email. In local development it is logged instead. */
 function send_contact_mail(array $clean): bool
 {
-    $domain = preg_replace('/^www\.|:\d+$/', '', site_host()) ?? 'localhost';
     $subject = 'New website enquiry' . ($clean['service'] !== '' ? ' — ' . $clean['service'] : '');
 
     $body = implode("\n", [
@@ -171,15 +170,16 @@ function send_contact_mail(array $clean): bool
         return true;
     }
 
+    // Sent from the no-reply address to the private inbox. Reply-To is the visitor.
     $headers = [
-        'From' => SITE_NAME . ' <no-reply@' . $domain . '>',
+        'From' => SITE_NAME . ' <' . MAIL_FROM . '>',
         'Reply-To' => $clean['email'],
         'Content-Type' => 'text/plain; charset=UTF-8',
         'X-Mailer' => 'PHP/' . PHP_VERSION,
     ];
 
     // Subject is built from allowlisted values only; encode the em dash safely.
-    return mail(CONTACT_EMAIL, mb_encode_mimeheader($subject, 'UTF-8'), $body, $headers);
+    return mail(FORM_RECIPIENT, mb_encode_mimeheader($subject, 'UTF-8'), $body, $headers);
 }
 
 /**

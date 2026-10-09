@@ -5,7 +5,8 @@ require_once __DIR__ . '/includes/bootstrap.php';
 
 $page = [
     'title' => SITE_NAME,
-    'description' => 'Digivyb is a digital studio for website and app development, SEO, advertising, graphic design, video, content writing and social media — everything your brand needs to get found and grow.',
+    'full_title' => SITE_NAME . ' — Websites, Apps & Digital Marketing',
+    'description' => 'digivyb is a digital studio for website and app development, SEO, advertising, graphic design, video, content writing and social media — everything your brand needs to get found and grow.',
     'path' => '/',
     'nav' => 'home',
     'preloader' => true,
@@ -23,12 +24,12 @@ $techStack = ['React', 'Next.js', 'React Native', 'Flutter', 'Vue.js', 'TypeScri
 $clients = ['NovaTech', 'AxisCloud', 'ZenStack', 'HyperScale', 'SkyForge', 'PulseAPI', 'Craftlayer'];
 
 $testimonials = [
-    ['initials' => 'AK', 'name' => 'Amit Khanna', 'role' => 'CTO, NovaTech Solutions', 'text' => "Digivyb didn't just build our site, they explained every decision along the way. Our old agency just handed us an invoice."],
-    ['initials' => 'SR', 'name' => 'Sneha Reddy', 'role' => 'VP Engineering, ZenStack', 'text' => 'Our checkout page loaded so slowly we were losing carts before checkout even opened. Digivyb rebuilt it, and our load time dropped from 9 seconds to under 2.'],
-    ['initials' => 'PG', 'name' => 'Priya Gupta', 'role' => 'Co-founder, AxisCloud', 'text' => 'We needed a mobile app fast, without cutting corners on accessibility. Digivyb shipped both in ten weeks, and it still runs flawlessly today.'],
+    ['initials' => 'AK', 'name' => 'Amit Khanna', 'role' => 'CTO, NovaTech Solutions', 'text' => "digivyb didn't just build our site, they explained every decision along the way. Our old agency just handed us an invoice."],
+    ['initials' => 'SR', 'name' => 'Sneha Reddy', 'role' => 'VP Engineering, ZenStack', 'text' => 'Our checkout page loaded so slowly we were losing carts before checkout even opened. digivyb rebuilt it, and our load time dropped from 9 seconds to under 2.'],
+    ['initials' => 'PG', 'name' => 'Priya Gupta', 'role' => 'Co-founder, AxisCloud', 'text' => 'We needed a mobile app fast, without cutting corners on accessibility. digivyb shipped both in ten weeks, and it still runs flawlessly today.'],
     ['initials' => 'VN', 'name' => 'Vikram Nair', 'role' => 'Founder, SkyForge Labs', 'text' => "Launch day traffic tripled overnight and the site didn't blink. That's exactly what you want to hear from your dev team."],
-    ['initials' => 'RA', 'name' => 'Rahul Ahuja', 'role' => 'Marketing Lead, HyperScale', 'text' => 'Every agency says they\'ll deliver a fast site. Digivyb is the first one that actually did, and kept it that way every month after.'],
-    ['initials' => 'MS', 'name' => 'Meera Shah', 'role' => 'Operations Lead, PulseAPI', 'text' => "Our team isn't technical, but Digivyb's updates always made sense to everyone in the room. That alone was worth switching agencies for."],
+    ['initials' => 'RA', 'name' => 'Rahul Ahuja', 'role' => 'Marketing Lead, HyperScale', 'text' => 'Every agency says they\'ll deliver a fast site. digivyb is the first one that actually did, and kept it that way every month after.'],
+    ['initials' => 'MS', 'name' => 'Meera Shah', 'role' => 'Operations Lead, PulseAPI', 'text' => "Our team isn't technical, but digivyb's updates always made sense to everyone in the room. That alone was worth switching agencies for."],
 ];
 
 $portfolio = array_slice(require INCLUDES_DIR . '/portfolio-data.php', 0, 3);
@@ -139,7 +140,7 @@ require INCLUDES_DIR . '/header.php';
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrap reveal">
-          <img src="/images/about.png" alt="Digivyb project dashboard" class="about-image-main" loading="lazy">
+          <img src="/images/about.png" alt="digivyb project dashboard" class="about-image-main" loading="lazy">
           <div class="about-image-badge">
             <div class="about-badge-icon">🎨</div>
             <div class="about-badge-text">
@@ -151,12 +152,12 @@ require INCLUDES_DIR . '/header.php';
 
         <div class="about-content">
           <div class="reveal">
-            <span class="section-label">Why Digivyb?</span>
+            <span class="section-label">Why digivyb?</span>
             <h2 class="section-title">One team for everything your brand does online.</h2>
           </div>
 
           <p class="about-description reveal reveal-delay-1">
-            Most businesses end up juggling a web developer, a designer, an SEO freelancer and someone for social media — none of whom talk to each other. Digivyb brings it together: design and code that look as good as they work, and marketing that actually points people at them.
+            Most businesses end up juggling a web developer, a designer, an SEO freelancer and someone for social media — none of whom talk to each other. digivyb brings it together: design and code that look as good as they work, and marketing that actually points people at them.
           </p>
 
           <div class="about-values reveal reveal-delay-2">

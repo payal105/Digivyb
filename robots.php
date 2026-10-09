@@ -7,4 +7,7 @@ header('Content-Type: text/plain; charset=UTF-8');
 echo "User-agent: *\n";
 echo "Allow: /\n";
 echo "Disallow: /api/\n\n";
-echo 'Sitemap: ' . site_url('/sitemap.xml') . "\n";
+// Don't advertise the sitemap while the site is hidden from search engines.
+if (ALLOW_INDEXING) {
+    echo 'Sitemap: ' . site_url('/sitemap.xml') . "\n";
+}

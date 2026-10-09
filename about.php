@@ -5,15 +5,15 @@ require_once __DIR__ . '/includes/bootstrap.php';
 
 $page = [
     'title' => 'About Us',
-    'description' => 'Meet the Digivyb team — a small, hands-on digital studio combining design, development, SEO, advertising and content under one roof.',
+    'description' => 'Meet the digivyb team — a small, hands-on digital studio combining design, development, SEO, advertising and content under one roof.',
     'path' => '/about',
     'nav' => 'about',
 ];
 
 $hero = [
-    'eyebrow' => 'About Digivyb',
+    'eyebrow' => 'About digivyb',
     'h1' => ['A small team that', 'treats your brand', 'like our own.'],
-    'lead' => 'Digivyb started with a simple frustration: agencies that hide behind jargon, hand over work and disappear. We built the studio we wished we could hire — clear, hands-on and invested in your results.',
+    'lead' => 'digivyb started with a simple frustration: agencies that hide behind jargon, hand over work and disappear. We built the studio we wished we could hire — clear, hands-on and invested in your results.',
     'crumbs' => [['Home', '/'], ['About Us', null]],
 ];
 
@@ -33,7 +33,7 @@ require INCLUDES_DIR . '/page-hero.php';
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrap reveal">
-          <img src="/images/about.png" alt="Digivyb project dashboard" class="about-image-main" loading="lazy">
+          <img src="/images/about.png" alt="digivyb project dashboard" class="about-image-main" loading="lazy">
           <div class="about-image-badge">
             <div class="about-badge-icon">🎨</div>
             <div class="about-badge-text">
@@ -45,12 +45,12 @@ require INCLUDES_DIR . '/page-hero.php';
 
         <div class="about-content">
           <div class="reveal">
-            <span class="section-label">Why Digivyb?</span>
+            <span class="section-label">Why digivyb?</span>
             <h2 class="section-title">Design and code you can actually be proud of.</h2>
           </div>
 
           <p class="about-description reveal reveal-delay-1">
-            Every pixel, every page load, every "does this actually work on mobile" matters to us as much as it matters to you. We built Digivyb around a simple idea: design that looks as good as it works, code that is built to last, and marketing that puts both in front of the right people.
+            Every pixel, every page load, every "does this actually work on mobile" matters to us as much as it matters to you. We built digivyb around a simple idea: design that looks as good as it works, code that is built to last, and marketing that puts both in front of the right people.
           </p>
 
           <div class="about-stats reveal reveal-delay-2">
