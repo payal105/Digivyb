@@ -143,14 +143,15 @@
 [data-theme="light"] #header.scrolled {
   background: rgba(244,246,251,0.92);
   border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 }
 
 [data-theme="light"] .client-logo {
-  color: rgba(0,0,0,0.15);
+  color: rgba(0,0,0,0.38);
 }
 
 [data-theme="light"] .client-logo:hover {
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.7);
 }
 
 [data-theme="light"] .marquee-section {
@@ -603,8 +604,20 @@ body::before {
 
 .header-logo .logo-image {
   display: block;
-  height: 28px;
+  height: 48px;
   width: auto;
+  transition: height 0.3s ease;
+}
+
+#header.scrolled .header-logo .logo-image {
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .header-logo .logo-image,
+  #header.scrolled .header-logo .logo-image {
+    height: 36px;
+  }
 }
 
 .header-nav {
@@ -780,7 +793,7 @@ body::before {
 
 .menu-overlay-logo .logo-image {
   display: block;
-  height: 28px;
+  height: 40px;
   width: auto;
 }
 
@@ -1428,14 +1441,14 @@ body::before {
   font-family: var(--font-heading);
   font-size: 17px;
   font-weight: 700;
-  color: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.35);
   letter-spacing: -0.02em;
   transition: var(--transition);
   user-select: none;
 }
 
 .client-logo:hover {
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.65);
 }
 
 /* =========================================
@@ -2307,7 +2320,7 @@ body::before {
 
 .footer-brand-logo .logo-image {
   display: block;
-  height: 32px;
+  height: 48px;
   width: auto;
 }
 

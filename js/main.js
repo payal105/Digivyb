@@ -25,20 +25,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (count >= 100) clearInterval(countInterval);
   }, 60);
 
-  // Hide preloader after animation
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      preloader?.classList.add('hidden');
-      document.body.classList.remove('preloader-active');
-      animateHeroEntrance();
-    }, 2200);
-  });
+  // The intro plays once per browser session, and only on pages that have a
+  // preloader (the home page). Everywhere else the hero animates in at once.
+  const skipIntro = !preloader || document.documentElement.classList.contains('no-intro');
 
-  // Fallback in case window.load is slow
-  setTimeout(() => {
+  function finishIntro() {
     preloader?.classList.add('hidden');
     document.body.classList.remove('preloader-active');
-  }, 3500);
+    if (preloader) {
+      try { sessionStorage.setItem('dv-intro', '1'); } catch (err) { /* storage unavailable */ }
+    }
+  }
+
+  if (skipIntro) {
+    finishIntro();
+    // Wait a frame so the initial hidden state paints before animating in.
+    requestAnimationFrame(() => animateHeroEntrance());
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        finishIntro();
+        animateHeroEntrance();
+      }, 2200);
+    });
+
+    // Fallback in case window.load is slow
+    setTimeout(finishIntro, 3500);
+  }
 
 
   /* =============================================
@@ -87,9 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
   const heroSection = document.getElementById('hero');
 
+  // The hero is a dark video backdrop in both themes, so the header gets a
+  // dark treatment (.over-hero) for as long as it is floating above it.
+  function updateOverHero() {
+    if (!header || !heroSection) return;
+    const heroBottom = heroSection.offsetHeight - header.offsetHeight;
+    header.classList.toggle('over-hero', window.scrollY < heroBottom);
+  }
+  updateOverHero();
+  window.addEventListener('resize', updateOverHero);
+
   let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
+    updateOverHero();
 
     // Scrolled state
     if (scrollY > 60) {
@@ -99,9 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
       header?.classList.remove('scrolled');
       header?.classList.add('hero-state');
     }
-
-    // Active nav link
-    updateActiveNavLink();
 
     // Back to top
     const backToTop = document.getElementById('back-to-top');
@@ -121,27 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* =============================================
-     4. ACTIVE NAV LINK ON SCROLL
+     4. ACTIVE NAV LINK — set server-side (aria-current) per page
   ============================================= */
-  const navLinks = document.querySelectorAll('.header-nav a, .menu-overlay-nav a');
-  const sections = document.querySelectorAll('section[id]');
-
-  function updateActiveNavLink() {
-    const scrollY = window.scrollY;
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }
 
 
   /* =============================================
@@ -155,11 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function openMenu() {
     menuOverlay?.classList.add('open');
     document.body.classList.add('menu-open');
+    hamburgerBtn?.setAttribute('aria-expanded', 'true');
   }
 
   function closeMenu() {
     menuOverlay?.classList.remove('open');
     document.body.classList.remove('menu-open');
+    hamburgerBtn?.setAttribute('aria-expanded', 'false');
   }
 
   hamburgerBtn?.addEventListener('click', openMenu);
@@ -180,7 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
   ============================================= */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
+      const hash = link.getAttribute('href');
+      if (!hash || hash.length < 2) {
+        e.preventDefault(); // placeholder link: do nothing instead of jumping to top
+        return;
+      }
+      const target = document.querySelector(hash);
       if (target) {
         e.preventDefault();
         const headerHeight = header?.offsetHeight || 80;
@@ -235,12 +244,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const filter = btn.dataset.filter;
 
       // Update active state
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       // Filter items
       portfolioItems.forEach(item => {
         const category = item.dataset.category;
+        clearTimeout(item.hideTimer); // a stale hide must not fire after we re-show the item
         if (filter === 'all' || category.includes(filter)) {
           item.style.opacity = '0';
           item.style.transform = 'scale(0.95)';
@@ -254,13 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           item.style.opacity = '0';
           item.style.transform = 'scale(0.95)';
-          setTimeout(() => {
+          item.hideTimer = setTimeout(() => {
             item.style.display = 'none';
           }, 300);
         }
       });
     });
   });
+
+  filterBtns.forEach(b => b.setAttribute('aria-pressed', String(b.classList.contains('active'))));
 
   // Add transition to portfolio items
   portfolioItems.forEach(item => {
@@ -273,26 +289,59 @@ document.addEventListener('DOMContentLoaded', () => {
   ============================================= */
   const contactForm = document.getElementById('contact-form');
   const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
 
-  contactForm?.addEventListener('submit', (e) => {
+  function setFieldErrors(errors) {
+    contactForm.querySelectorAll('[data-error-for]').forEach(el => {
+      el.textContent = errors[el.dataset.errorFor] || '';
+      el.setAttribute('role', 'alert');
+    });
+  }
+
+  function showFormError(message) {
+    if (!formError) return;
+    formError.textContent = message;
+    formError.classList.add('show');
+  }
+
+  contactForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = contactForm.querySelector('[type="submit"]');
-    if (submitBtn) {
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-    }
+    const submitLabel = submitBtn?.querySelector('span');
+    setFieldErrors({});
+    formError?.classList.remove('show');
+    formSuccess?.classList.remove('show');
 
-    // Simulate form submission
-    setTimeout(() => {
-      contactForm.reset();
-      if (submitBtn) {
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
+    if (submitBtn) submitBtn.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.ok) {
+        contactForm.reset();
+        const tokenInput = contactForm.querySelector('input[name="csrf"]');
+        if (tokenInput && data.csrf) tokenInput.value = data.csrf;
+        formSuccess?.classList.add('show');
+      } else if (data.errors) {
+        setFieldErrors(data.errors);
+        contactForm.querySelector('.field-error:not(:empty)')
+          ?.closest('.form-group')?.querySelector('input, select, textarea')?.focus();
+      } else {
+        showFormError(data.message || 'Something went wrong. Please try again, or email us directly.');
       }
-      formSuccess?.classList.add('show');
-      setTimeout(() => formSuccess?.classList.remove('show'), 5000);
-    }, 1500);
+    } catch (err) {
+      showFormError('We could not reach the server. Please check your connection and try again.');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+      if (submitLabel) submitLabel.textContent = 'Send Message';
+    }
   });
 
 
@@ -334,12 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
     counterObserver.observe(el);
   });
 
-
-  /* =============================================
-     13. SCROLL-BASED HEADER NAV STYLE
-  ============================================= */
-  // Run once on load
-  updateActiveNavLink();
 
   /* =============================================
      14. LIGHT / DARK THEME TOGGLE

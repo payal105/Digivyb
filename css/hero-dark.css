@@ -1,0 +1,161 @@
+/* Hero — cinematic dark overlay.
+   Loaded after style.css; overrides the hero's theme-aware styling so the
+   video reads as a dark, high-contrast backdrop in both light and dark mode. */
+
+#hero,
+[data-theme="light"] #hero {
+  background: #080C18;
+}
+
+#hero .container {
+  width: 100%;
+}
+
+#hero .hero-bg-video,
+[data-theme="light"] #hero .hero-bg-video {
+  opacity: 0.95;
+}
+
+#hero .hero-bg-scrim,
+[data-theme="light"] #hero .hero-bg-scrim {
+  background:
+    linear-gradient(100deg, rgba(8, 12, 24, 0.94) 0%, rgba(8, 12, 24, 0.78) 42%, rgba(8, 12, 24, 0.3) 100%),
+    linear-gradient(0deg, rgba(8, 12, 24, 0.75) 0%, transparent 35%);
+}
+
+#hero .hero-glow { opacity: 0.55; }
+#hero .hero-grid { opacity: 0.6; }
+
+#hero .hero-content { max-width: 820px; }
+
+#hero .hero-badge {
+  color: #BFEFEE;
+  background: rgba(105, 200, 199, 0.12);
+  border-color: rgba(105, 200, 199, 0.4);
+}
+
+#hero .hero-title {
+  font-size: clamp(40px, 5.8vw, 76px);
+  color: #fff;
+}
+
+#hero .hero-title .accent-line {
+  background-image: linear-gradient(135deg, #8FE3E1 0%, #3D8F97 100%);
+}
+
+#hero .hero-title .highlight {
+  background-image: linear-gradient(135deg, #3D8F97 0%, #8FE3E1 100%);
+}
+
+#hero .hero-description {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 560px;
+}
+
+#hero .hero-btn-secondary {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+#hero .hero-btn-secondary:hover {
+  color: #8FE3E1;
+  border-bottom-color: #8FE3E1;
+}
+
+#hero .hero-stats {
+  border-top-color: rgba(255, 255, 255, 0.18);
+  margin-top: 64px;
+}
+
+#hero .hero-stat-number { color: #fff; }
+#hero .hero-stat-label { color: rgba(255, 255, 255, 0.62); }
+#hero .hero-scroll-indicator { color: rgba(255, 255, 255, 0.6); }
+
+/* The header floats over dark footage while the hero is behind it (class
+   set from main.js), so it gets a dark treatment — transparent at the very
+   top, dark glass once scrolled — and the logo's dark lettering flips to
+   white. Once the hero scrolls away it reverts to the normal themed header. */
+#header.over-hero.scrolled,
+[data-theme="light"] #header.over-hero.scrolled {
+  background: rgba(8, 12, 24, 0.72);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Cross-fade the logo/nav colour swap instead of snapping it */
+#header .header-logo .logo-image { transition: filter 0.35s ease, height 0.3s ease; }
+#header .header-nav a { transition: color 0.35s ease; }
+
+#header.over-hero .header-nav a { color: rgba(255, 255, 255, 0.85); }
+#header.over-hero .header-nav a:hover,
+#header.over-hero .header-nav a.active { color: #8FE3E1; }
+#header.over-hero .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+#header.over-hero .header-logo .logo-image { filter: brightness(0) invert(1); }
+#header.over-hero .theme-toggle-btn,
+#header.over-hero .hamburger-btn { color: #fff; }
+#header.over-hero .hamburger-btn span { background: #fff; }
+
+/* Tech ticker continues the hero's dark backdrop (both themes) so the hero
+   flows into it instead of hitting a hard white edge; the page turns light
+   after it. */
+.marquee-section,
+[data-theme="light"] .marquee-section {
+  background: #080C18;
+  border-top-color: rgba(255, 255, 255, 0.08);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.marquee-section .marquee-item,
+[data-theme="light"] .marquee-section .marquee-item {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.marquee-section .marquee-item:hover { color: #8FE3E1; }
+
+/* Make the stack ticker a showcase band: label, larger type, edge fade,
+   and it pauses on hover so visitors can read it. */
+.marquee-section,
+[data-theme="light"] .marquee-section {
+  padding: 30px 0 34px;
+}
+
+.marquee-label {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.marquee-section .marquee-track {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.marquee-section:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-section .marquee-item,
+[data-theme="light"] .marquee-section .marquee-item {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 0 40px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.marquee-section .marquee-dot {
+  width: 7px;
+  height: 7px;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(105, 200, 199, 0.7);
+}
+
+@media (max-width: 768px) {
+  .marquee-section .marquee-item { font-size: 17px; padding: 0 28px; }
+}

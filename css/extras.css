@@ -59,45 +59,6 @@
   to { transform: translateY(0); }
 }
 
-/* Clients logo bar */
-.clients-section {
-  background: #0A0D17;
-  padding: 56px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.clients-label {
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #71717A;
-  margin-bottom: 32px;
-}
-
-.clients-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 48px;
-}
-
-.client-logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.12);
-  letter-spacing: -0.02em;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  user-select: none;
-}
-
-.client-logo:hover {
-  color: rgba(255,255,255,0.35);
-}
-
 /* Glow animation utility */
 @keyframes glowPulse {
   0%, 100% { box-shadow: 0 0 20px rgba(105,200,199,0.15); }
