@@ -121,25 +121,6 @@
   background: var(--color-bg);
 }
 
-[data-theme="light"] .hero-terminal {
-  background: rgba(255,255,255,0.9);
-  border-color: rgba(0,0,0,0.1);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.12), var(--glow-accent);
-}
-
-[data-theme="light"] .terminal-header {
-  background: rgba(0,0,0,0.03);
-  border-color: rgba(0,0,0,0.08);
-}
-
-[data-theme="light"] .terminal-body .terminal-line {
-  color: #4A4A6A;
-}
-
-[data-theme="light"] .terminal-line.output {
-  color: rgba(0,0,0,0.4);
-}
-
 [data-theme="light"] #header.scrolled {
   background: rgba(244,246,251,0.92);
   border-color: rgba(0,0,0,0.08);
@@ -941,8 +922,7 @@ body::before {
 }
 
 /* Readability scrim — nearly opaque where the headline/body copy
-   sits (left side), fading away toward the terminal card (right
-   side), which already has its own solid background. */
+   sits (left side), fading out toward the right so the video shows. */
 .hero-bg-scrim {
   position: absolute;
   inset: 0;
@@ -967,8 +947,7 @@ body::before {
   );
 }
 
-/* Video is heavy for mobile data/battery and the layout stacks the
-   terminal card below the copy there anyway, so fall back to the
+/* Video is heavy for mobile data/battery, so fall back to the
    CSS-only glow background under this breakpoint. */
 @media (max-width: 768px) {
   .hero-bg-video {
@@ -983,8 +962,8 @@ body::before {
 }
 
 /* Glowing gradient orbs — soft, drifting color pools that give the
-   hero its depth and "eye-catching" motion without touching the
-   copy or the terminal card (both sit in a higher stacking layer). */
+   hero its depth and motion without touching the copy (which sits in
+   a higher stacking layer). */
 .hero-glow {
   position: absolute;
   border-radius: 50%;
@@ -1072,11 +1051,9 @@ body::before {
 
 /* The site-wide .container is centered with a 1200px cap, which is
    fine for single-column sections, but in the hero it left a large
-   unused gutter on wide screens: the terminal card already breaks
-   out to hug the true right edge, while the text stayed trapped
-   inside the centered box. Letting the hero's container stretch full
-   width (with its own responsive side padding) lets the copy use
-   that reclaimed space instead of leaving it empty. */
+   unused gutter on wide screens. Letting the hero's container stretch
+   full width (with its own responsive side padding) lets the copy use
+   that space. */
 #hero .container {
   max-width: none;
   margin: 0;
@@ -1219,115 +1196,6 @@ body::before {
   color: var(--color-text-muted);
   margin-top: 4px;
   letter-spacing: 0.02em;
-}
-
-/* Terminal Card */
-.hero-terminal-wrap {
-  position: absolute;
-  /* Hugs the true edge like before on normal screens, but on very
-     wide monitors it eases inward (as if pinned to the edge of an
-     ~1480px centered column) instead of leaving an ever-growing dead
-     gap between the copy and the card. */
-  right: max(0px, calc((100vw - 1480px) / 2));
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 440px;
-  pointer-events: none;
-}
-
-.hero-terminal {
-  background: rgba(17,17,19,0.9);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(105,200,199,0.05), var(--glow-accent);
-  backdrop-filter: blur(12px);
-}
-
-.terminal-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: rgba(255,255,255,0.03);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.terminal-dot.red { background: #FF5F57; }
-.terminal-dot.yellow { background: #FFBD2E; }
-.terminal-dot.green { background: #28C840; }
-
-.terminal-title {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-muted);
-  margin-left: 4px;
-  letter-spacing: 0.05em;
-}
-
-.terminal-body {
-  padding: 20px 20px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.terminal-line {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.terminal-line.output {
-  color: rgba(255,255,255,0.5);
-  padding-left: 20px;
-}
-
-.terminal-line.success {
-  color: var(--color-accent);
-  margin-top: 4px;
-  text-shadow: 0 0 12px rgba(105,200,199,0.5);
-}
-
-.terminal-prompt {
-  color: var(--color-accent);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.terminal-green {
-  color: #28C840;
-}
-
-.terminal-cursor {
-  display: inline-block;
-  width: 8px;
-  height: 15px;
-  background: var(--color-accent);
-  animation: terminalBlink 1.2s step-end infinite;
-  border-radius: 1px;
-  vertical-align: middle;
-  box-shadow: 0 0 8px rgba(105,200,199,0.7);
-}
-
-@keyframes terminalBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Terminal type animation */
-.terminal-line.type-anim {
-  overflow: hidden;
 }
 
 .hero-scroll-indicator {
@@ -2459,7 +2327,6 @@ body::before {
    RESPONSIVE — TABLETS
    ========================================= */
 @media (max-width: 1024px) {
-  .hero-terminal-wrap { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }

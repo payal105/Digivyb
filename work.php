@@ -12,7 +12,7 @@ $page = [
 
 $hero = [
     'eyebrow' => 'Our Work',
-    'h1' => ['Work we\'re proud', 'to put our name', 'on.'],
+    'h1' => ['Our work,', 'built around', 'real business goals.'],
     'lead' => 'A selection of websites, stores, apps and brand projects. Every one started with a conversation about what the business really needed.',
     'crumbs' => [['Home', '/'], ['Our Work', null]],
 ];
